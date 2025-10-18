@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 
-import { motion, useAnimation, useInView } from "framer-motion";
+import { motion, useAnimation, useInView, easeOut, Variants } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 
@@ -80,7 +80,7 @@ const AnimatedGrid = () => {
     },
   };
 
-  const item = {
+  const item : Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,
@@ -137,7 +137,7 @@ const AnimatedGrid = () => {
   );
 };
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 60 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
 };
@@ -496,3 +496,7 @@ export default function Home() {
     </div>
   );
 }
+
+
+
+
